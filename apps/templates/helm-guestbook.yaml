@@ -10,6 +10,9 @@ spec:
     namespace: helm-guestbook
     server: {{ .Values.spec.destination.server }}
   project: default
+  syncPolicy:
+    automated:
+      prune: true
   source:
     path: helm-guestbook
     repoURL: {{ .Values.spec.source.repoURL }}
